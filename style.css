@@ -1,0 +1,425 @@
+:root {
+    /* Colors */
+    --dark-violet: #21222C;
+    /* First color for hero gradient */
+    --medium-violet: #4D127B;
+    /* Second color for hero gradient */
+    --dark-black: #000000;
+    --medium-black: #4F4F4F;
+    --light-red: #FC8A8A;
+    /* Middle hero text */
+    --light-gray: #EAEAEA;
+    /* Main text color */
+    --yellow: #EBBC0E;
+    --yellow-hover: #e9d075;
+    /* Main button color */
+    --light-pink: #FE8789;
+    /* First color for violet pink gradient */
+    --light-violet: #A468DD;
+    /* First color for violet pink gradient */
+
+    /* Scales */
+    --corner-radius: 200px;
+    --h1-main-space-letters: -2px;
+    --h1-main-line-height: 16cqw;
+
+    /* Font Sizes */
+    --h1-main-fontsize: 80px;
+    --h1-section2-fontsize: 240px;
+    --h1-section3-fontsize: 208px;
+    --h1-section4-fontsize: 240px;
+    --h1-footer-fontsize: 87px;
+    --h2-date-fontsize: 60px;
+    --p-footer-fontsize: 23px;
+    --p-main-fontsize: 38px;
+
+    /* Viewport max */
+    --horizontal-bound: 90px;
+}
+
+.noise {
+    pointer-events: none;
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    z-index: 1000;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    opacity: 0.04;
+}
+
+.noise-inner {
+    visibility: visible;
+    position: absolute;
+    left: -50%;
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200vh;
+    background-image: url(https://assets.website-files.com/640f28796fa05b70a852fb37/640f28796fa05b0d8752fb49_bg_noise.webp);
+    background-position: 50% 50%;
+    background-size: auto;
+}
+
+::selection {
+    background: rgb(189, 24, 109);
+}
+
+html {
+    overflow-x: hidden;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.section-1 {
+    position: relative;
+    z-index: 500;
+}
+
+.section-2 {
+    position: relative;
+    z-index: 400;
+}
+
+.section-3 {
+    position: relative;
+    z-index: 300;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.wrap-container {
+    max-width: 1700px;
+    width: 1700px;
+}
+
+.s2-container {
+    margin: 300px 0;
+}
+
+nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.menu-hamburguer {
+    padding: 20px;
+}
+
+.section-1 {
+    border-radius: 0px 0px 200px 0px;
+    background: linear-gradient(258deg, #4D127B -42.89%, #21222C 99.49%);
+    box-shadow: 0px 7px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 200px var(--horizontal-bound) 0;
+    overflow: hidden;
+}
+
+.h1-main {
+    font-size: var(--h1-main-fontsize);
+    color: var(--light-gray);
+    font-family: 'League Gothic';
+    font-weight: 400;
+    letter-spacing: var(--h1-main-space-letters);
+}
+
+.h1-main span {
+    color: #FC8A8A;
+}
+
+.h2-main {
+    color: var(--light-gray);
+    text-align: center;
+    font-family: League Gothic;
+    font-size: var(--h2-date-fontsize);
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 13.53px;
+}
+
+.s1-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 'title'
+        'date';
+}
+
+.s1-grid-item-1 {
+    grid-area: title;
+    line-height: var(--h1-main-line-height);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.s1-grid-item-2 {
+    grid-area: date;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    flex-direction: column;
+}
+
+.s1-stars-wrap {
+    cursor: pointer;
+}
+
+.pulsar-wrap {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pulsar {
+    width: 500px;
+    height: 500px;
+    opacity: 0;
+    transform: scale(0);
+}
+
+.pulsar svg {
+    width: 100%;
+    height: 100%;
+}
+
+.s1-stars-wrap img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    object-fit: contain;
+    user-select: none;
+}
+
+.s1-countdown-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 64px 0;
+}
+
+.s1-countdown {
+    background-image: URL('./assets/border-countdown.png');
+    width: 610px;
+    height: 214px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.s1-countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr;
+    font-family: 'League Gothic';
+    font-size: 44px;
+    color: var(--light-gray);
+    font-weight: 400 !important;
+    text-align: center;
+    width: 520px;
+}
+
+.s1-countdown-grid div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.s1-p-countdown-value {
+    font-size: 84px;
+}
+
+.s1-p-countdown-info {
+    font-size: 38px;
+}
+
+.s1-btn-book {
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Segoe UI';
+    background-color: var(--yellow);
+    border: none;
+    width: 158.816px;
+    height: 55px;
+    flex-shrink: 0;
+    border-radius: 42px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -50%);
+    transition: background-color ease 0.2s;
+}
+
+.s1-btn-book:hover {
+    background-color: var(--yellow-hover);
+}
+
+.s2-background {
+    padding-top: 200px;
+    position: absolute;
+    background: linear-gradient(228deg, #4F4F4F -6.01%, #000 100%);
+    height: 100%;
+    width: 100%;
+    z-index: -100;
+    transform: translateY(-200px);
+    border-radius: 0px 0px 200px 0px;
+}
+
+.section-2 {
+    width: 100%;
+    border-radius: 0px 0px 200px 0px;
+    box-shadow: 0px 7px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.s2-p-tittle {
+    font-size: 240px;
+    font-family: 'League Gothic';
+    color: var(--light-gray);
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.s2-p-info {
+    font-size: 26px;
+    color: var(--light-gray);
+    font-weight: 600;
+    font-family: 'Segoe UI';
+    width: 600px;
+}
+
+.s2-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.s2-grid-item-text {
+    width: 824px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.s3-background {
+    padding-top: 200px;
+    position: absolute;
+    background: linear-gradient(241deg, #A63263 -29.88%, #541A32 100%);
+    height: 100%;
+    width: 100%;
+    z-index: -200;
+    transform: translateY(-200px);
+    border-radius: 0px 0px 200px 0px;
+}
+
+.section-3 {
+    position: relative;
+    border-radius: 0px 0px 200px 0px;
+}
+
+.s3-title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 200px 0;
+    height: 800px;
+    position: sticky;
+    top: 0;
+}
+
+.s3-title-sticky-container {
+    height: 300vh;
+}
+
+.s3-p {
+    color: var(--light-gray);
+    text-align: center;
+    font-family: League Gothic;
+    font-size: 208px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -8.32px;
+    line-height: 160px;
+}
+
+.h1-outlined {
+    font-weight: lighter;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: var(--light-gray);
+}
+
+@media (min-width: 640px) {
+    :root {
+        --h1-main-space-letters: -4px;
+    }
+}
+
+@media (min-width: 768px) {
+    :root {
+        --h1-section2-fontsize: 240px;
+        --h1-section3-fontsize: 208px;
+        --h1-section4-fontsize: 240px;
+        --h1-footer-fontsize: 87px;
+        --p-footer-fontsize: 23px;
+        --p-main-fontsize: 38px;
+        --h1-main-space-letters: -4px;
+        --h1-main-line-height: 7cqw;
+    }
+}
+
+@media (min-width: 1024px) {
+    :root {
+        --h1-main-fontsize: 8cqw;
+        --h1-section2-fontsize: 240px;
+        --h1-section3-fontsize: 208px;
+        --h1-section4-fontsize: 240px;
+        --h1-footer-fontsize: 87px;
+        --p-footer-fontsize: 23px;
+        --p-main-fontsize: 38px;
+        --h1-main-space-letters: -7.2px;
+    }
+
+    .s1-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 'title date';
+    }
+}
+
+@media (min-width: 1300px) {
+    :root {
+        --h1-section2-fontsize: 240px;
+        --h1-section3-fontsize: 208px;
+        --h1-section4-fontsize: 240px;
+        --h1-footer-fontsize: 87px;
+        --p-footer-fontsize: 23px;
+        --p-main-fontsize: 38px;
+        --h1-main-space-letters: -7.2px;
+    }
+}
